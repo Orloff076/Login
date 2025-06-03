@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login CDP</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- PyScript -->
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-box">
+      <div class="logo">CDP</div>
+    </div>
+
+    <div class="login-box">
+      <label for="usuario">USUÁRIO</label>
+      <input type="text" id="usuario" placeholder="Digite seu usuário" />
+
+      <label for="senha">SENHA</label>
+      <input type="password" id="senha" placeholder="Digite sua senha" />
+
+      <button id="login-btn">LOGIN</button>
+
+      <p id="status-msg"></p>
+    </div>
+  </div>
+
+  <!-- PyScript Backend -->
+  <py-script>
+from js import document
+import asyncio
+
+async def login_backend(event):
+    status = document.getElementById("status-msg")
+    status.innerText = "Aguarde..."
+    await asyncio.sleep(2)  # Simula requisição ao backend
+
+    usuario = document.getElementById("usuario").value
+    senha = document.getElementById("senha").value
+
+    if usuario == "admin" and senha == "1234":
+        status.innerText = "Login bem-sucedido!"
+    else:
+        status.innerText = "Usuário ou senha inválidos."
+
+# Conecta o botão ao Python
+btn = document.getElementById("login-btn")
+btn.addEventListener("click", login_backend)
+  </py-script>
+</body>
+</html>

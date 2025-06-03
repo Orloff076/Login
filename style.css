@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle, #2e0f0f, #000);
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.logo-box {
+  background: linear-gradient(to right, #f26522, #a3562d);
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  border: 10px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+}
+
+.login-box label {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.login-box input {
+  background-color: #803c17;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 16px;
+}
+
+.login-box button {
+  background-color: #d94d1a;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+#status-msg {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffc107;
+}
